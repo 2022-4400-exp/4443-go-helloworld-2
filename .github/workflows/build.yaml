@@ -26,10 +26,9 @@ jobs:
           buildx-version: latest
           qemu-version: latest
 
-      - name: Build and Publish
+      - name: Build Docker image
         run: |
           docker buildx build \
-            --push \
             --platform linux/arm/v7,linux/amd64 \
             -t ghcr.io/2022-4400-exp/4443-go-helloworld-2:${{ github.sha }} .
 
